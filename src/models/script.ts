@@ -34,7 +34,23 @@ export const Script: IScript = {
       title: 'Make a photo',
       client_text: 'please make a photo',
       note: 'wow note',
-      step_answers: [],
+      step_answers: [
+        {
+          id: 3,
+          rejection: null,
+          next_step: 3,
+        },
+        {
+          id: 4,
+          rejection: {
+            id: 1,
+            cause: 'Client is dead',
+            text: 'Your client is dead',
+            code: 'DeadClient',
+          },
+          next_step: 1,
+        },
+      ],
       photo_types: [
         {
           id: 1,
@@ -56,13 +72,27 @@ export const Script: IScript = {
       title: 'Make selfie',
       client_text: 'please make selfie',
       note: 'wow note',
-      step_answers: [],
+      step_answers: [
+        {
+          id: 5,
+          rejection: null,
+          next_step: 1,
+        },
+        {
+          id: 6,
+          rejection: {
+            id: 1,
+            cause: 'Client is dead',
+            text: 'Your client is dead',
+            code: 'DeadClient',
+          },
+          next_step: 2,
+        },
+      ],
       photo_types: [],
     },
   ],
 };
-
-type Nullable<T> = T | null;
 
 export interface IScript {
   id: number;
@@ -84,7 +114,7 @@ export interface IStep {
 
 export interface IStepAnswer {
   id: number;
-  rejection: Nullable<IRejection>;
+  rejection: IRejection | null;
   next_step: number;
 }
 

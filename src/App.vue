@@ -100,9 +100,10 @@ export default {
 }
 
 .make-photo {
-  width: 50px;
+  width: 55px;
   height: 50px;
   display: flex;
+  flex-direction: row;
   border-radius: 8px;
   margin-right: 20px;
   background: #f4f4f4;
