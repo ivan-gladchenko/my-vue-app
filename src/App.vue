@@ -104,16 +104,18 @@ export default {
   height: 50px;
   display: flex;
   border-radius: 8px;
+  margin-right: 20px;
   background: #f4f4f4;
 }
 
 .accept-reject-buttons {
+  padding-top: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 100px;
-  height: 50px;
+  width: 112px;
+  height: 48px;
   border-radius: 8px;
   background: #f4f4f4;
 }
